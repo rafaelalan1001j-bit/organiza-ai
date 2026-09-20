@@ -1,0 +1,15 @@
+﻿body {
+    display: flex;
+}
+.sidebar {
+    width: 220px;
+    min-height: 100vh;
+    background-color: #4d4e81;
+}
+.sidebar .navbar-brand {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 1rem 0;
+}
