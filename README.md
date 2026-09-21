@@ -1,6 +1,6 @@
 ﻿# ⚡ Organiza AI
 
-Aplicação Web para gerenciamento e organização de tarefas cotidianas e acadêmicas, desenvolvida com Python e Django no âmbito da disciplina de Desenvolvimento Web na **Universidade Federal Rural da Amazônia (UFRA)** - Campus Capitão Poço.
+Aplicação Web para gerenciamento e organização de tarefas cotidianas e acadêmicas, desenvolvida com Python e Django no âmbito da disciplina de Desenvolvimento Web na **Universidade Federal Rural da Amazônia (UFRA)** - Campus São Miguel do Guamá.
 
 ---
 
@@ -87,3 +87,4 @@ Acesse a aplicação no navegador em: 👉 **http://127.0.0.1:8000/**
 * / ou /menu/ : Tela inicial do Organiza AI com menu lateral de navegação.
 * /lista_tarefas/ : Tabela com as tarefas cadastradas no sistema.
 * /admin/ : Painel administrativo do Django para controle geral de dados.
+
