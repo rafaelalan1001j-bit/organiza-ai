@@ -1,15 +1,164 @@
-﻿body {
-    display: flex;
+/* ==========================================================================
+   OrganizaAI - Modern Design System (Bootstrap 5.3 Compatible)
+   ========================================================================== */
+
+:root {
+    --brand-primary: #6366f1;
+    --brand-primary-dark: #4f46e5;
+    --brand-secondary: #8b5cf6;
+    --brand-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
+    --brand-card-bg: #ffffff;
+    --brand-border: #e2e8f0;
+    --brand-text: #1e293b;
+    --brand-text-muted: #64748b;
+    --radius-default: 12px;
 }
-.sidebar {
-    width: 220px;
+
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--brand-text);
+    background-color: #f8fafc;
     min-height: 100vh;
-    background-color: #4d4e81;
+    display: flex;
+    flex-direction: column;
 }
-.sidebar .navbar-brand {
-    display: block;
-    text-align: center;
+
+/* Navbar */
+.bg-gradient-brand {
+    background: var(--brand-gradient) !important;
+}
+
+.brand-sparkle {
+    display: inline-block;
+    color: #fbbf24;
+    animation: sparklePulse 2.5s infinite;
+}
+
+@keyframes sparklePulse {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+    50% { transform: scale(1.2) rotate(15deg); opacity: 1; }
+}
+
+/* Stat Widgets */
+.stat-widget {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: var(--radius-default);
+}
+
+.stat-widget:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -2px rgba(0, 0, 0, 0.08) !important;
+}
+
+.stat-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Gradient Progress */
+.bg-gradient-primary {
+    background: var(--brand-gradient) !important;
+}
+
+/* Task Card */
+.task-card {
+    transition: all 0.2s ease;
+    border-radius: var(--radius-default);
+    border-left: 4px solid var(--brand-primary) !important;
+}
+
+.task-card:hover {
+    box-shadow: 0 6px 16px -2px rgba(0, 0, 0, 0.08) !important;
+    transform: translateX(2px);
+}
+
+.task-completed {
+    opacity: 0.75;
+    background-color: #f8fafc !important;
+    border-left-color: #10b981 !important;
+}
+
+.task-completed .task-title-link {
+    text-decoration: line-through !important;
+    color: #94a3b8 !important;
+}
+
+/* Checkbox Button */
+.task-checkbox-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #cbd5e1;
+    background-color: #ffffff;
+    color: transparent;
+    padding: 0;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.task-checkbox-btn:hover {
+    border-color: var(--brand-primary);
+    color: var(--brand-primary);
+    background-color: #e0e7ff;
+}
+
+.task-checkbox-btn.checked {
+    background-color: #10b981;
+    border-color: #10b981;
+    color: #ffffff;
+}
+
+.task-checkbox-btn.checked:hover {
+    background-color: #059669;
+    border-color: #059669;
+}
+
+/* Text Truncate Helper */
+.text-truncate-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Category Card */
+.category-card {
+    border-radius: var(--radius-default);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.category-stripe {
+    height: 5px;
     width: 100%;
-    margin: 0;
-    padding: 1rem 0;
+}
+
+.category-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Quick Add Form */
+.quick-add-card {
+    border-radius: var(--radius-default);
+    border: 1px solid rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Footer */
+.footer-modern {
+    background-color: #ffffff;
 }

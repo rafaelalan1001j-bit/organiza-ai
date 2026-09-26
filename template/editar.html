@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar Tarefa — OrganizaAI{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-8 col-lg-6">
+        <div class="card border-0 shadow-sm">
+            <div class="card-header bg-white border-bottom py-3">
+                <h2 class="h5 fw-bold mb-0 text-dark">
+                    <i class="bi bi-pencil-square text-primary me-2"></i> Editar Tarefa
+                </h2>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST" action="{% url 'editar_tarefa' tarefa.id %}">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label fw-bold">Título da Tarefa *</label>
+                        <input type="text" id="titulo" name="titulo" class="form-control" value="{{ tarefa.titulo }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descricao" class="form-label fw-bold">Descrição</label>
+                        <textarea id="descricao" name="descricao" class="form-control" rows="3">{{ tarefa.descricao|default:'' }}</textarea>
+                    </div>
+
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-6">
+                            <label for="categoria" class="form-label fw-bold">Categoria</label>
+                            <select id="categoria" name="categoria" class="form-select">
+                                <option value="">Sem categoria</option>
+                                {% for cat in categorias %}
+                                    <option value="{{ cat.id }}" {% if tarefa.categoria_id == cat.id %}selected{% endif %}>
+                                        {{ cat.nome }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="prioridade" class="form-label fw-bold">Prioridade</label>
+                            <select id="prioridade" name="prioridade" class="form-select">
+                                <option value="baixa" {% if tarefa.prioridade == 'baixa' %}selected{% endif %}>🟢 Baixa</option>
+                                <option value="media" {% if tarefa.prioridade == 'media' %}selected{% endif %}>🟡 Média</option>
+                                <option value="alta" {% if tarefa.prioridade == 'alta' %}selected{% endif %}>🔴 Alta</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="data_limite" class="form-label fw-bold">Data Limite</label>
+                        <input type="date" id="data_limite" name="data_limite" class="form-control" value="{{ tarefa.data_limite|date:'Y-m-d'|default:'' }}">
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <a href="{% url 'home' %}" class="btn btn-outline-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-primary fw-bold px-4">Salvar Alterações</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
