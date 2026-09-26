@@ -31,12 +31,10 @@ class OrganizaSimplesTests(TestCase):
         self.assertTrue(Tarefa.objects.filter(titulo='Estudar para Prova').exists())
 
     def test_editar_tarefa(self):
-        # GET
         response_get = self.client.get(reverse('editar_tarefa', args=[self.tarefa.id]))
         self.assertEqual(response_get.status_code, 200)
         self.assertContains(response_get, "Editar Tarefa")
 
-        # POST
         dados = {
             'titulo': 'Apresentar NAP2 Atualizado',
             'categoria': self.categoria.id,
@@ -60,16 +58,13 @@ class OrganizaSimplesTests(TestCase):
         self.assertFalse(Tarefa.objects.filter(id=self.tarefa.id).exists())
 
     def test_crud_categoria(self):
-        # Listar
         response = self.client.get(reverse('categorias'))
         self.assertEqual(response.status_code, 200)
 
-        # Criar
         response = self.client.post(reverse('categorias'), {'nome': 'Trabalho Novo'})
         self.assertEqual(response.status_code, 302)
         nova_cat = Categoria.objects.get(nome='Trabalho Novo')
 
-        # Excluir
         response = self.client.post(reverse('excluir_categoria', args=[nova_cat.id]))
         self.assertEqual(response.status_code, 302)
         self.assertFalse(Categoria.objects.filter(id=nova_cat.id).exists())

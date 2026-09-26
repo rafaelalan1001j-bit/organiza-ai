@@ -1,7 +1,3 @@
-/* ==========================================================================
-   OrganizaAI - Modern Design System (Bootstrap 5.3 Compatible)
-   ========================================================================== */
-
 :root {
     --brand-primary: #6366f1;
     --brand-primary-dark: #4f46e5;
@@ -23,7 +19,6 @@ body {
     flex-direction: column;
 }
 
-/* Navbar */
 .bg-gradient-brand {
     background: var(--brand-gradient) !important;
 }
@@ -39,7 +34,6 @@ body {
     50% { transform: scale(1.2) rotate(15deg); opacity: 1; }
 }
 
-/* Stat Widgets */
 .stat-widget {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     border-radius: var(--radius-default);
@@ -59,12 +53,10 @@ body {
     justify-content: center;
 }
 
-/* Gradient Progress */
 .bg-gradient-primary {
     background: var(--brand-gradient) !important;
 }
 
-/* Task Card */
 .task-card {
     transition: all 0.2s ease;
     border-radius: var(--radius-default);
@@ -87,7 +79,6 @@ body {
     color: #94a3b8 !important;
 }
 
-/* Checkbox Button */
 .task-checkbox-btn {
     width: 34px;
     height: 34px;
@@ -119,7 +110,6 @@ body {
     border-color: #059669;
 }
 
-/* Text Truncate Helper */
 .text-truncate-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -127,7 +117,6 @@ body {
     overflow: hidden;
 }
 
-/* Category Card */
 .category-card {
     border-radius: var(--radius-default);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -152,13 +141,11 @@ body {
     justify-content: center;
 }
 
-/* Quick Add Form */
 .quick-add-card {
     border-radius: var(--radius-default);
     border: 1px solid rgba(99, 102, 241, 0.2) !important;
 }
 
-/* Footer */
 .footer-modern {
     background-color: #ffffff;
 }

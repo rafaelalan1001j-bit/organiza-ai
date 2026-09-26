@@ -1,7 +1,4 @@
-// OrganizaAI - JavaScript Interactions & Client Utilities
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Inicialização do Modal de Edição de Tarefas (Bootstrap 5)
     const modalEl = document.getElementById('modalEditarTarefa');
     let editModalInstance = null;
     if (modalEl && typeof bootstrap !== 'undefined') {
@@ -33,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 2. Auto-dismiss de alertas após 4.5 segundos
     const alerts = document.querySelectorAll('.alert-dismissible');
     alerts.forEach(alertEl => {
         setTimeout(() => {
@@ -46,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 4500);
     });
 
-    // 3. Suporte a atalhos de teclado (ex: '/' foca no campo de busca rápida)
     document.addEventListener('keydown', (e) => {
         if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
             const searchInput = document.querySelector('input[name="q"]');
